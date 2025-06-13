@@ -1,0 +1,1380 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acriluxe - Produk Akrilik Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --light-green: #8ecf9d;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+            --black: #121212;
+            --white: #ffffff;
+            --transparent-white: rgba(255, 255, 255, 0.9);
+            --transparent-black: rgba(18, 18, 18, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--black);
+        }
+        
+        .logo span {
+            color: var(--light-green);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--light-green);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--black);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(142, 207, 157, 0.3)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="white" /><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            width: 100%;
+            color: var(--black);
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 0;
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--light-green);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--light-green);
+            color: var(--light-green);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--light-green);
+            color: var(--white);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--light-green);
+        }
+        
+        .section-title p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--dark-gray);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .about-image-main {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            border: 5px solid var(--light-green);
+        }
+        
+        .about-image-main svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(142, 207, 157, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--light-green);
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+        
+        .feature-card p {
+            color: var(--dark-gray);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .category-btn {
+            padding: 10px 20px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--light-green);
+            color: var(--white);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image svg, .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--light-green);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+        
+        .product-info p {
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--light-green);
+            margin-bottom: 15px;
+        }
+        
+        .product-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--light-green);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .product-btn:hover {
+            background-color: var(--black);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(142, 207, 157, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-icon i {
+            font-size: 18px;
+            color: var(--light-green);
+        }
+        
+        .contact-text h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--light-green);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--light-green);
+        }
+        
+        .social-link i {
+            font-size: 18px;
+            color: var(--black);
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover i {
+            color: var(--white);
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--light-green);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: var(--light-green);
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+        
+        .footer-heading {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-green);
+        }
+        
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--light-green);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top i {
+            font-size: 20px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content {
+                padding: 30px;
+            }
+            
+            .hero-content h2 {
+                font-size: 32px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--white);
+            z-index: 1001;
+            padding: 20px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        .mobile-menu-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-menu-nav ul li {
+            margin-bottom: 20px;
+        }
+        
+        .mobile-menu-nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu-nav ul li a:hover {
+            color: var(--light-green);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#8ECF9D" fill-opacity="0.2"/>
+                    <path d="M20 8L32 14V26L20 32L8 26V14L20 8Z" stroke="#8ECF9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 16L26 19V25L20 28L14 25V19L20 16Z" stroke="#8ECF9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Acri<span>luxe</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="8" fill="#8ECF9D" fill-opacity="0.2"/>
+                    <path d="M20 8L32 14V26L20 32L8 26V14L20 8Z" stroke="#8ECF9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 16L26 19V25L20 28L14 25V19L20 16Z" stroke="#8ECF9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Acri<span>luxe</span></h1>
+            </div>
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h2>Produk Akrilik Premium untuk Setiap Kesempatan</h2>
+                <p>Temukan koleksi vendel, display case, dan aksesoris rumah akrilik berkualitas tinggi yang dibuat dengan presisi dan elegan.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn">Jelajahi Produk</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Acriluxe</h2>
+                <p>Kami mengkhususkan diri dalam menciptakan produk akrilik premium dengan perhatian pada detail dan kualitas pengerjaan</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <div class="about-image-main">
+                        <!-- This is a placeholder for your company logo/icon -->
+                        <svg width="100%" height="100%" viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="250" height="250" fill="#8ECF9D" fill-opacity="0.2"/>
+                            <path d="M125 50L200 87.5V162.5L125 200L50 162.5V87.5L125 50Z" stroke="#8ECF9D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M125 100L162.5 118.75V156.25L125 175L87.5 156.25V118.75L125 100Z" stroke="#8ECF9D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <text x="125" y="225" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333">ACRILUXE</text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="about-text fade-in delay-1">
+                    <p>Acriluxe adalah penyedia utama produk akrilik berkualitas tinggi, yang mengkhususkan diri dalam vendel kustom, display case, dan aksesoris rumah. Dengan komitmen kami pada presisi dan perhatian terhadap detail, kami menciptakan karya yang menakjubkan yang menggabungkan fungsionalitas dengan daya tarik estetika.</p>
+                    <p>Tim pengrajin terampil kami menggunakan bahan terbaik dan teknologi mutakhir untuk memastikan bahwa setiap produk memenuhi standar kami yang ketat. Baik Anda membutuhkan penghargaan untuk acara perusahaan, display case elegan untuk koleksi, atau aksesoris rumah yang bergaya, kami memberikan keunggulan dalam setiap karya.</p>
+                    <a href="#contact" class="btn">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mengapa Memilih Acriluxe</h2>
+                <p>Temukan keunggulan yang membedakan produk akrilik kami dari kompetitor</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Bahan Premium</h3>
+                    <p>Kami hanya menggunakan bahan akrilik berkualitas tertinggi yang menawarkan kejernihan, daya tahan, dan ketahanan terhadap penguningan seiring waktu.</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3>Desain Kustom</h3>
+                    <p>Tim kami bekerja sama dengan Anda untuk menciptakan desain personal yang sempurna sesuai dengan kebutuhan dan preferensi Anda.</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Ketelitian Pengerjaan</h3>
+                    <p>Setiap produk dibuat dengan perhatian detail yang teliti, memastikan tepi yang bersih, pas sempurna, dan hasil akhir yang sempurna.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Produksi Cepat</h3>
+                    <p>Proses produksi kami yang efisien memungkinkan kami untuk mengirimkan produk akrilik kustom Anda dengan cepat tanpa mengorbankan kualitas.</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Finishing Elegan</h3>
+                    <p>Kami menawarkan berbagai pilihan finishing termasuk tepi yang dipoles, permukaan buram, dan pencetakan UV untuk tampilan yang benar-benar premium.</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Dukungan Pelanggan</h3>
+                    <p>Tim layanan pelanggan kami selalu siap membantu Anda dengan pertanyaan, konsultasi desain, dan dukungan purna jual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Katalog Produk Kami</h2>
+                <p>Jelajahi koleksi produk akrilik premium kami yang dirancang untuk memenuhi kebutuhan Anda</p>
+            </div>
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">Semua Produk</button>
+                <button class="category-btn" data-category="vendels">Vendel & Piala</button>
+                <button class="category-btn" data-category="home">Aksesoris Rumah</button>
+                <button class="category-btn" data-category="custom">Pesanan Kustom</button>
+            </div>
+            <div class="products-grid">
+                <!-- Vendels & Trophies -->
+                <div class="product-card" data-category="vendels">
+                    <div class="product-image">
+                        <img src="Vendel.jpg"
+                            alt="Vendel Wisuda"
+                            class="product-photo">
+
+                    <div class="product-badge">Terlaris</div>
+                </div>
+
+                 <div class="product-info">
+                     <h3>Vendel Wisuda</h3>
+                     <p>Piala akrilik kristal elegan dengan desain topi wisuda, sempurna untuk upacara wisuda dan prestasi akademik.</p>
+                     <button class="product-btn" data-product="Vendel Wisuda">
+                             <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                         </button>
+                     </div>
+                </div>
+                
+                <!-- Home Accessories -->
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <!-- Placeholder for Acrylic Tissue Box -->
+                         <img src="Akrilik_Tisu.jpg"
+                            alt="Akrilik Tisu"
+                            class="product-photo">
+                            <!-- Tissue Box -->
+                            <rect x="70" y="70" width="140" height="100" rx="5" fill="rgba(255, 255, 255, 0.5)" stroke="#8ECF9D" stroke-width="2"/>
+                            <rect x="110" y="70" width="60" height="30" rx="5" fill="#8ECF9D" fill-opacity="0.1"/>
+                            <rect x="70" y="170" width="140" height="10" fill="#8ECF9D" fill-opacity="0.3"/>
+                            
+                            <!-- Tissue Paper -->
+                            <path d="M140 85C140 85 150 95 140 105C130 95 140 85 140 85Z" fill="white" stroke="#DDDDDD"/>
+                            <path d="M130 85C130 85 140 95 130 105C120 95 130 85 130 85Z" fill="white" stroke="#DDDDDD"/>
+                            <path d="M150 85C150 85 160 95 150 105C140 95 150 85 150 85Z" fill="white" stroke="#DDDDDD"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Kotak Tisu Akrilik</h3>
+                        <p>Tempat tisu akrilik yang bergaya dan modern yang melengkapi gaya desain interior apa pun.</p>
+                        <button class="product-btn" data-product="Kotak Tisu Akrilik">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <!-- Placeholder for Elegant Photo Frame -->
+                        <img src="Foto_Frame.jpg"
+                            alt="Foto Frame"
+                            class="product-photo">
+                            <!-- Photo Frame -->
+                            <rect x="60" y="50" width="160" height="150" rx="2" fill="rgba(255, 255, 255, 0.5)" stroke="#8ECF9D" stroke-width="2"/>
+                            <rect x="70" y="60" width="140" height="130" rx="2" fill="#8ECF9D" fill-opacity="0.1"/>
+                            <!-- Photo Content -->
+                            <rect x="80" y="70" width="120" height="90" fill="#F5F5F5"/>
+                            <circle cx="120" cy="100" r="15" fill="#8ECF9D" fill-opacity="0.3"/>
+                            <rect x="90" y="130" width="100" height="10" fill="#8ECF9D" fill-opacity="0.2"/>
+                            <rect x="90" y="145" width="60" height="5" fill="#8ECF9D" fill-opacity="0.2"/>
+                            
+                            <!-- Landscape Scene -->
+                            <path d="M80 120L100 100L120 110L140 90L160 105L180 80L200 120" stroke="#8ECF9D" stroke-width="1" stroke-linecap="round"/>
+                            <circle cx="110" cy="85" r="8" fill="#8ECF9D" fill-opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bingkai Foto Elegan</h3>
+                        <p>Bingkai foto akrilik jernih yang membuat kenangan Anda menonjol dengan efek mengambang.</p>
+                        <button class="product-btn" data-product="Bingkai Foto Elegan">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="home">
+                    <div class="product-image">
+                        <!-- Placeholder for Mini Acrylic Aquarium -->
+                        <img src="Mini_Aquarium.jpg"
+                            alt="Mini Aquarium"
+                            class="product-photo">
+                            <!-- Aquarium -->
+                            <rect x="60" y="70" width="160" height="120" fill="rgba(255, 255, 255, 0.5)" stroke="#8ECF9D" stroke-width="2"/>
+                            <rect x="60" y="190" width="160" height="10" fill="#8ECF9D" fill-opacity="0.3"/>
+                            <!-- Aquarium Content -->
+                            <path d="M80 150C90 140 100 160 110 150C120 140 130 160 140 150C150 140 160 160 170 150C180 140 190 160 200 150" stroke="#8ECF9D" stroke-width="1"/>
+                            <path d="M100 120C102 118 104 122 106 120" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M106 120C108 118 110 122 112 120" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="104" cy="118" r="1" fill="#333333"/>
+                            
+                            <path d="M150 130C152 128 154 132 156 130" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M156 130C158 128 160 132 162 130" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="154" cy="128" r="1" fill="#333333"/>
+                            
+                            <path d="M130 110C132 108 134 112 136 110" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M136 110C138 108 140 112 142 110" stroke="#8ECF9D" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="134" cy="108" r="1" fill="#333333"/>
+                            
+                            <rect x="70" y="160" width="140" height="30" fill="#8ECF9D" fill-opacity="0.1"/>
+                            <circle cx="90" cy="170" r="3" fill="#8ECF9D" fill-opacity="0.3"/>
+                            <circle cx="100" cy="175" r="2" fill="#8ECF9D" fill-opacity="0.3"/>
+                            <circle cx="110" cy="172" r="2.5" fill="#8ECF9D" fill-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mini Akuarium Akrilik</h3>
+                        <p>Akuarium akrilik berukuran kecil yang indah, sempurna untuk tampilan ikan di meja atau meja dapur.</p>
+                        <button class="product-btn" data-product="Mini Akuarium Akrilik">
+                            <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Custom Orders -->
+                <div class="product-card" data-category="custom">
+                    <div class="product-image">
+                        <!-- Placeholder for Custom Acrylic Project -->
+                        <img src="CUSTOM.jpg"
+                            alt="Custom Akrilik"
+                            class="product-photo" style="width: 100%; display: block;">
+                            <rect width="280" height="250" fill="#F5F5F5"/>
+                            <!-- Custom Design Illustration -->
+                            <rect x="70" y="60" width="140" height="130" rx="5" fill="rgba(255, 255, 255, 0.5)" stroke="#8ECF9D" stroke-width="2" stroke-dasharray="5 5"/>
+                            
+                            <!-- Custom Design Elements -->
+                            <rect x="90" y="80" width="40" height="40" rx="5" fill="#8ECF9D" fill-opacity="0.2"/>
+                            <circle cx="170" cy="100" r="20" fill="#8ECF9D" fill-opacity="0.2"/>
+                            <path d="M110 150L140 130L170 150" stroke="#8ECF9D" stroke-width="2" stroke-linecap="round"/>
+                            
+                            <text x="140" y="190" font-family="Arial" font-size="16" text-anchor="middle" fill="#333333">Desain Kustom</text>
+                            <text x="140" y="210" font-family="Arial" font-size="12" text-anchor="middle" fill="#333333">Visi Anda, Keahlian Kami</text>
+                        </svg>
+                        <div class="product-badge">Populer</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Proyek Akrilik Kustom</h3>
+                        <p>Punya ide unik? Kami dapat mewujudkan proyek akrilik kustom Anda dengan keahlian pengerjaan kami.</p>
+                        <button class="product-btn" data-product="Proyek Akrilik Kustom">
+                            <i class="fab fa-whatsapp"></i> Diskusikan Proyek Anda
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami</h2>
+                <p>Hubungi kami untuk pertanyaan, pesanan kustom, atau untuk mendiskusikan proyek Anda</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Informasi Kontak</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Alamat</h4>
+                                <p>Jl. Raya ITS, Sukolilo Surabaya 60111</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Telepon</h4>
+                                <a href="tel:+6281383288585">+62 813-8328-8585</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:febrianaufal@gmail.com">febrianaufal@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Jam Kerja</h4>
+                                <p>Senin - Jumat: 9:00 - 17:00</p>
+                                <p>Sabtu: 10:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form fade-in delay-1">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Nama Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subjek">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Pesan Anda" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Acri<span>luxe</span></div>
+                    <p>Produk akrilik premium yang dibuat dengan presisi dan elegan. Kami mengkhususkan diri dalam vendel kustom, display case, dan aksesoris rumah yang menggabungkan fungsionalitas dengan daya tarik estetika.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Tautan Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Produk</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products">Vendel & Piala</a></li>
+                        <li><a href="#products">Bingkai Foto</a></li>
+                        <li><a href="#products">Kotak Tisu</a></li>
+                        <li><a href="#products">Mini Akuarium</a></li>
+                        <li><a href="#products">Pesanan Kustom</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-heading">Hubungi Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Raya ITS, Sukolilo Surabaya 60111</p>
+                    <p><i class="fas fa-phone-alt"></i> +62 813-8328-8585</p>
+                    <p><i class="fas fa-envelope"></i> febrianaufal@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +62 813-8328-8585</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Acriluxe. Hak Cipta Dilindungi. Produk Akrilik Premium.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const backToTop = document.querySelector('.back-to-top');
+            
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('active');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenuClose = document.querySelector('.mobile-menu-close');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-nav ul li a');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+        });
+        
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+        
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to Top Button
+        document.querySelector('.back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Product Category Filter
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Get category value
+                const category = this.getAttribute('data-category');
+                
+                // Filter products
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // WhatsApp Order Button
+        const productButtons = document.querySelectorAll('.product-btn');
+        
+        productButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.getAttribute('data-product');
+                const price = this.getAttribute('data-price');
+                
+                const message = `Halo Acriluxe, saya tertarik untuk memesan ${product} (${price}). Bisakah Anda memberikan informasi lebih lanjut?`;
+                
+                // Replace with your actual WhatsApp number
+                const whatsappNumber = '6281383288585';
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, you would send the form data to your server
+                // For this demo, we'll just show an alert
+                alert('Terima kasih atas pesan Anda! Kami akan segera menghubungi Anda.');
+                contactForm.reset();
+            });
+        }
+        
+        // Animation on Scroll
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 50) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Initial check
+        window.addEventListener('load', function() {
+            checkVisibility();
+        });
+        
+        // Check on scroll
+        window.addEventListener('scroll', function() {
+            checkVisibility();
+        });
+        
+        // Initialize with fade-in elements hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94ee8d1c66df3de8',t:'MTc0OTc4NTg2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
